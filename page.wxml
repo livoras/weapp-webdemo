@@ -1,0 +1,7 @@
+{{name}}
+
+<view wx:for="{{[1, 2, 3, 4, 5, 6]}}">
+  Hello world! {{index}}
+</view>
+
+<image src="http://www.baidu.com/img/bd_logo1.png?qua=high&where=super" />

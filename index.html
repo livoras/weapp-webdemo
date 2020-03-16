@@ -31,14 +31,27 @@
         }
     </script>
     <script>
+    var fn = function(event) {
+        document.dispatchEvent(new CustomEvent("generateFuncReady", {
+            detail: {
+                generateFunc: $gwx('page.wxml')
+            }
+        }))
+    }
+    window.addEventListener('load', fn)
+    </script>
+    <script>
         var __webviewId__;
     </script>
     <script>
-        __wxRoute = 'index';
+        __wxRoute = 'pages/index/index';
         __wxRouteBegin = true
         __wxConfig = {
+            "env": {
+                "USER_DATA_PATH": "",
+            },
             "debug": true,
-            "pages": ["index"],
+            "pages": ["page/index/index"],
             "window": {
                 "backgroundTextStyle": "light",
                 "navigationBarBackgroundColor": "#fff",
@@ -85,143 +98,20 @@
             "userInfo": {}
         }
     </script>
-    <script src="./split/wxJSBridge.js"></script>
-    <script src="./split/wx.js"></script>
+    <script>
+    </script>
+    <script src="./split/WAService.js"></script>
+    <script src="./split/WAWebview.js"></script>
     <script src="./split/virtual_dom.js"></script>
-    <script src="./split/report.js"></script>
     <script src="./split/exparser.js"></script>
     <script src="./split/exparser-behvaior.js"></script>
     <script src="./split/define.js"></script>
-    <script src="./split/page.js"></script>
-    <!--{{allWXML}}-->
+    <!-- {{allWXML}} -->
     <!--{{eruda}}-->
     <!--{{style}}-->
     <!--{{currentstyle}}-->
     <!--{{generateFunc}}-->
-    <script>
-        /*v0.7cc_20160919*/
-        var $gwxc
-        var $gaic={}
-        $gwx=function(path,global){
-            function _(a,b){b&&a.children.push(b);}
-            function _n(tag){$gwxc++;if($gwxc>=16000){throw 'enough, dom limit exceeded, you don\'t do stupid things, do you?'};return {tag:tag.substr(0,3)=='wx-'?tag:'wx-'+tag,attr:{},children:[]}}
-            function _s(scope,env,key){return typeof(scope[key])!='undefined'?scope[key]:env[key]}
-            function _wl(tname){console.warn('template `' + tname + '` is being call recursively, will be stop.')}
-            function _ai(i,p,e,me){var x=_grp(p,e,me);if(x)i.push(x);else{console.warn('path `'+p+'` not found from `'+me+'`')}}
-            function _grp(p,e,me){if(p[0]!='/'){var mepart=me.split('/');mepart.pop();var ppart=p.split('/');for(var i=0;i<ppart.length;i++){if( ppart[i]=='..')mepart.pop();else if(!ppart[i])continue;else mepart.push(ppart[i]);}p=mepart.join('/');}if(me[0]=='.'&&p[0]=='/')p='.'+p;if(e[p])return p;if(e[p+'.wxml'])return p+'.wxml';}
-            function _gd(p,c,e,d){if(d[p][c])return d[p][c];for(var x=e[p].i.length-1;x>=0;x--){if(d[e[p].i[x]][c])return d[e[p].i[x]][c]};var ii=_gapi(e,p);for(var x=0;x<ii.length;x++){if(d[ii[x]][c])return d[ii[x]][c]}}
-            function _gapi(e,p){if($gaic[p]){return $gaic[p]};var ret=[],q=[],h=0,t=0,put={},visited={};q.push(p);visited[p]=true;t++;while(h<t){var a=q[h++];for(var i=0;i<e[a].ic.length;i++){var nd=e[a].ic[i];var np=_grp(nd,e,a);if(np&&!visited[np]){visited[np]=true;q.push(np);t++;}}for(var i=0;a!=p&&i<e[a].ti.length;i++){var ni=e[a].ti[i];var nm=_grp(ni,e,a);if(nm&&!put[nm]){put[nm]=true;ret.push(nm);}}}$gaic[p]=ret;return ret;}
-            var $ixc={};function _ic(p,ent,me,e,s,r,gg){var x=_grp(p,ent,me);if(x){if($ixc[x]){console.warn('`'+p+'` is being included in a loop, will be stop');return;}$ixc[x]=true;try{ent[x].f(e,s,r,gg)}catch(e){}$ixc[x]=false;}else{console.warn('included path `'+p+'` not found from `'+me+'`')}}
-            var e_={}
-            if(global&&typeof(global.entrys)=='object')e_=global.entrys
-            var d_={}
-            if(global&&typeof(global.defines)=='object')d_=global.defines
-            var p_={}
-            var cs
-            d_['index.wxml']={}
-            var m0=function(e,s,r,gg){
-                cs.push("index.wxml:view:1:1")
-                var uB=_n('view')
-                uB.attr.class="btn-area"
-                cs.push("index.wxml:view:2:4")
-                var hC=_n('view')
-                hC.attr.class="body-view"
-                cs.push("index.wxml:text:3:6")
-                var aD=_n('text')
-                var oE="Hacking"
-                oE=oE.toString()
-                _(aD,oE)
-                cs.pop()
-                _(hC,aD)
-                cs.push("index.wxml:view:4:6")
-                var jF=_n('view')
-                cs.push("index.wxml:block:5:7")
-                var aG=function(kI,cH,yJ,gg){
-                    cs.push("index.wxml:icon:6:8")
-                    var bL=_n('icon')
-                    var lM=_s(cH,kI,'item')
-
-                    bL.attr.size=typeof(lM)=='undefined'?'':lM
-                    bL.attr.type="success"
-                    cs.pop()
-                    _(yJ,bL)
-                    return yJ
-                }
-                var sO=[]
-                var bP=20
-                sO.push(bP)
-                var hQ=30
-                sO.push(hQ)
-                var uR=40
-                sO.push(uR)
-                var aS=50
-                sO.push(aS)
-                var hT=60
-                sO.push(hT)
-                var eU=70
-                sO.push(eU)
-                var cN=typeof(sO)=='undefined'?'':sO
-                cN=cN||[]
-                var eW={}
-                for(var _x in s)eW[_x]=s[_x]
-                for(var rV=0;rV<cN.length;rV++){
-                    eW.index=rV
-                    eW.item=cN[rV]
-                    aG(e,eW,jF,gg)
-                }
-                cs.pop()
-                cs.pop()
-                _(hC,jF)
-                cs.push("index.wxml:view:9:6")
-                var nX=_n('view')
-                cs.push("index.wxml:text:10:7")
-                var dY=_n('text')
-                var oZ="当前，只有渲染wxml部分是工作的~~~~"
-                oZ=oZ.toString()
-                _(dY,oZ)
-                cs.pop()
-                _(nX,dY)
-                cs.push("index.wxml:button:11:7")
-                var u1=_n('button')
-                u1.attr.bindtap="add"
-                var h2="add line"
-                h2=h2.toString()
-                _(u1,h2)
-                cs.pop()
-                _(nX,u1)
-                cs.push("index.wxml:button:12:7")
-                var u3=_n('button')
-                u3.attr.bindtap="remove"
-                var i4="remove line"
-                i4=i4.toString()
-                _(u3,i4)
-                cs.pop()
-                _(nX,u3)
-                cs.pop()
-                _(hC,nX)
-                cs.pop()
-                _(uB,hC)
-                cs.pop()
-                _(r,uB)
-                return r
-            }
-            e_["index.wxml"]={f:m0,i:[],ti:[],ic:[]}
-            if(path&&e_[path]){
-                return function(env,global){$gwxc=0;var root={"tag":"wx-page"};root.children=[]
-                    var main=e_[path].f
-                    cs=[]
-                    try{
-                        main(env,{},root,global);
-                    }catch(err){
-                        console.log(cs, env);
-                        console.log(err)
-                    }
-                    return root;
-                }
-            }
-        }
-
-    </script>
+    <script type="text/javascript" src="./page.js"></script>
 
 </head>
 
@@ -229,23 +119,19 @@
 <div id="app"></div>
 </body>
 <script>
-    document.dispatchEvent(new CustomEvent("generateFuncReady", {
-        detail: {
-            generateFunc: $gwx('index.wxml')
-        }
-    }))
 </script>
+<script>__wxRouteBegin = true</script>
 <script>
     define("app.js", function(require, module){var window={Math:Math}/*兼容babel*/,location,document,navigator,self,localStorage,history,Caches;
         App({
             onLaunch: function () {
-
+                console.log("ONLUANCH")
             }
         })
     });
     require("app.js");
 
-    define("pages/index/index.js", function(require, module){var window={Math:Math}/*兼容babel*/,location,document,navigator,self,localStorage,history,Caches;
+    define("page.js", function(require, module){var window={Math:Math}/*兼容babel*/,location,document,navigator,self,localStorage,history,Caches;
         var app = getApp();
         var initData = 'this is first line\nthis is second line'
         var extraLine = [];
@@ -253,6 +139,9 @@
         Page({
             data: {
                 text: initData
+            },
+            onLoad: function(o) {
+                console.log(" --> ", o)
             },
             add: function(e) {
                 extraLine.push('other line')
@@ -270,6 +159,6 @@
                 }
             }
         })    });
-    require("pages/index/index.js");
+    require("page.js");
 </script>
 </html>
